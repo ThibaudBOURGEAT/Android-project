@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:background="@color/yellowColor"
     tools:context="tbo.ynov.com.projetandroidtbo.SettingsActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageButton
+        android:id="@+id/return_button"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:adjustViewBounds="true"
+        android:background="@color/yellowColor"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/backicone"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_guideline"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="230dp"
+        android:layout_height="match_parent"
+        android:background="@color/yellowColor"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="Configuration"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/return_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</LinearLayout>

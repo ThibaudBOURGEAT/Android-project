@@ -43,7 +43,7 @@ public class MenuActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.btn_map:
-                    intent = new Intent(MenuActivity.this, MapActivity.class);
+                    intent = new Intent(MenuActivity.this, MapsActivity.class);
                     startActivity(intent);
                     break;
             }

@@ -20,6 +20,8 @@ import tbo.ynov.com.projetandroidtbo.MainActivity;
 import tbo.ynov.com.projetandroidtbo.Managers.NetworkManager;
 import tbo.ynov.com.projetandroidtbo.Models.User;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * Created by Trax6 on 05/06/2018.
  */
@@ -41,11 +43,10 @@ public class AuthenticationService{
                 JSONObject response = null;
                 try {
                     response = new JSONObject(result);
-                    Log.i("token :", response.getString("auth_token"));
-                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity.get());
-                    prefs.edit()
-                            .putString("token", response.getString("auth_token"))
-                            .apply();
+                    SharedPreferences prefs = activity.get().getBaseContext().getSharedPreferences("login", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("token", response.getString("auth_token"));
+                    editor.apply();
                     activity.get().showMenuActivity();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -54,7 +55,7 @@ public class AuthenticationService{
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(activity.get(), "Authentification raté ", Toast.LENGTH_LONG).show();
+                Toast.makeText(activity.get(), "Login/Mot de passe éroné.", Toast.LENGTH_LONG).show();
             }
         });
     }

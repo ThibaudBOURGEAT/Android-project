@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("Identification");
+
 
         login = findViewById(R.id.login); /*On reprend l'ID de la zone text du login*/
         password = findViewById(R.id.password);/*On reprend l'ID de la zone text du password*/
